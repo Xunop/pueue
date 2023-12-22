@@ -22,8 +22,8 @@ pub async fn shutdown_daemon(shared: &Shared) -> Result<Message> {
 /// This function gives the daemon a little time to boot up, but ultimately crashes if it takes too
 /// long.
 pub async fn get_pid(pid_path: &Path) -> Result<i32> {
-    // Give the daemon about 1 sec to boot and create the pid file.
-    let tries = 20;
+    // Give the daemon about 10 sec to boot and create the pid file.
+    let tries = 100;
     let mut current_try = 0;
 
     while current_try < tries {
