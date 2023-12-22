@@ -118,7 +118,7 @@ mod non_apple {
         let shared = &daemon.settings.shared;
 
         // Add a task echoes something and waits for a while
-        assert_success(add_task(shared, "echo test && sleep 20").await?);
+        assert_success(add_task(shared, "echo test && sleep 40").await?);
         wait_for_task_condition(shared, 0, |task| task.is_running()).await?;
 
         // Reset the daemon after 2 seconds. At this point, the client will already be following the
